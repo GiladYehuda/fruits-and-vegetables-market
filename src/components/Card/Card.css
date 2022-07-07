@@ -1,0 +1,21 @@
+.card {
+    text-align: center;
+    margin-right: 1rem;
+    background-color:white;
+    border-radius: 2rem;
+    font-family: 'Roboto Slab', serif;
+    box-shadow: 0 0 7px 1px;
+}
+
+.card img {
+    width: 80%;
+}
+
+.card img:hover {
+    transform: scale(1.2);
+    transition: transform 1s;
+}
+
+.card-body {
+    padding: 1rem;
+}

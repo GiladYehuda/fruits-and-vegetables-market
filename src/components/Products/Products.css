@@ -1,0 +1,14 @@
+.shop {
+    padding: 10rem 5rem 25rem;
+    display: grid;
+    gap: 2rem;
+    grid-template-columns: 1fr;
+    justify-content: center;
+    background-image: url("https://wallpaperaccess.com/full/1537371.jpg");
+}
+
+@media screen and (min-width:600px){
+    .shop {
+        grid-template-columns: repeat(auto-fit , minmax(14rem , 16rem));
+    }
+}
