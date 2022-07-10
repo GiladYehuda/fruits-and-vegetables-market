@@ -26,6 +26,7 @@ export default function SelectSmall(props) {
         <MenuItem value={"All"}>All</MenuItem>
         <MenuItem value={"fruit"}>Fruits</MenuItem>
         <MenuItem value={"vegetable"}>Vegetables</MenuItem>
+        <MenuItem value={"leaves"}>Leaves</MenuItem>
       </Select>
     </FormControl>
   );
