@@ -1,10 +1,25 @@
+.productss {
+    padding: 7rem 5rem 25rem;
+    background-image: url("https://wallpaperaccess.com/full/1537371.jpg");
+} 
+
+.productss h1 {
+    font-family: 'Roboto Slab', serif;
+    -webkit-text-stroke: 0.5px black;
+    color: white;
+    font-weight:900;
+    text-align: center;
+    font-size: 2.5rem;
+    padding-bottom: 3rem;
+}
+
 .shop {
-    padding: 10rem 5rem 25rem;
+    /* padding: 10rem 5rem 25rem; */
     display: grid;
     gap: 2rem;
     grid-template-columns: 1fr;
     justify-content: center;
-    background-image: url("https://wallpaperaccess.com/full/1537371.jpg");
+    /* background-image: url("https://wallpaperaccess.com/full/1537371.jpg"); */
 }
 
 @media screen and (min-width:600px){

@@ -3,6 +3,7 @@ import { AppBar, Toolbar, Tabs, Typography, Tab, Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import SelectSmall from "./SelectSmall";
 import TemporaryDrawer from "./TemporaryDrawer";
+import CustomizedBadges from "./ShoppingBadge";
 import "./Navbar.css";
 
 function Navbar(props) {
@@ -20,10 +21,13 @@ function Navbar(props) {
             <Tab label="PRODUCTS"></Tab>
           </Link>
         </Tabs>
+        <TemporaryDrawer></TemporaryDrawer>
+        <Link to="/cart">
+          <CustomizedBadges />
+        </Link>
         {props.isFilter == false ? (
           <SelectSmall productsFilter={props.productsFilter}></SelectSmall>
         ) : null}
-        <TemporaryDrawer></TemporaryDrawer>
       </Toolbar>
     </AppBar>
   );

@@ -1,0 +1,70 @@
+.cart {
+    font-size: larger;
+    font-family: 'Roboto Slab', serif;
+
+    padding: 0 12rem;
+}
+
+.cart h1 {
+    padding-top: 5rem;
+    padding-bottom: 3rem;
+    text-align: center;
+}
+
+.cart-card {
+    background-color: #E7F6F2;
+    box-shadow: 12px 8px 8px #7F8487;
+    padding: 3rem 14rem;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    border: solid  2px #395B64;
+    margin-bottom: 1rem;
+    border-radius: 30px;
+}
+
+.cart-card img {
+    width: 15%;
+}
+
+.box-buttons {
+    padding-top: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding-bottom: 5px;
+}
+
+.box-buttons button {
+    padding: 5px 10px;
+    margin-right: 2px;
+    letter-spacing: 2px;
+    outline: none;
+    color: white;
+    background-color: black;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+.box-buttons button:hover {
+    background-color: #3F4E4F;
+}
+
+.btn {
+    background-color: black;
+    border-radius: 28px;
+    color: #ffffff;
+    font-size: 20px;
+    padding: 10px 20px 10px 20px;
+    margin: 50px 0 0;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .btn:hover {
+    transform: scale(1.1);
+    transition: transform 2s;
+    background-color: #3F4E4F;
+  }
