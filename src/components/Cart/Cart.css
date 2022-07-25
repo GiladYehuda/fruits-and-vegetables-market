@@ -1,13 +1,12 @@
 .cart {
     font-size: larger;
     font-family: 'Roboto Slab', serif;
-
     padding: 0 12rem;
 }
 
 .cart h1 {
     padding-top: 5rem;
-    padding-bottom: 3rem;
+    padding-bottom: 2rem;
     text-align: center;
 }
 
@@ -68,3 +67,37 @@
     transition: transform 2s;
     background-color: #3F4E4F;
   }
+
+  @media screen and (min-width:1200px) and (max-width:1600px) {
+    .cart {
+        padding: 0 3rem;
+    }
+
+    .cart-card {
+        padding: 3rem 5rem;
+    }
+
+}
+
+@media screen and (max-width:1199px) {
+    .cart {
+        padding: 0 2rem;
+    }
+
+    .cart-card {
+        padding: 3rem 1rem;
+    }
+
+.box-buttons button {
+    font-size: 0.7rem;
+}
+
+.btn {
+    font-size: 15px;
+  }
+
+  .cart h2,h3 {
+    font-size: 1.2rem;
+  }
+
+}

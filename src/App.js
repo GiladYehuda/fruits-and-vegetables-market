@@ -559,6 +559,7 @@ function App() {
   const [productsCart, setProductsCart] = useState([]);
   const [countCart, setCountCart] = useState(0);
   const [TotalPrice, setTotalPrice] = useState(0);
+  const [showCart, setShowCart] = useState(false);
 
   useEffect(() => {
     fetchProducts();
@@ -592,6 +593,8 @@ function App() {
         setCountCart,
         TotalPrice,
         setTotalPrice,
+        showCart,
+        setShowCart,
       }}
     >
       <Router>

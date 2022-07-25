@@ -32,7 +32,10 @@ function Cart() {
           )
         );
       else RemoveProduct(item);
-      setTotalPrice(TotalPrice - item.price).toFixed(2);
+      try {
+        setTotalPrice(TotalPrice - item.price).toFixed(2);
+      } catch (ex) {}
+      //setTotalPrice(TotalPrice - item.price).toFixed(2);
     }
   }
 
@@ -48,7 +51,10 @@ function Cart() {
         )
       );
     }
-    setTotalPrice(TotalPrice + item.price).toFixed(2);
+
+    try {
+      setTotalPrice(TotalPrice + item.price).toFixed(2);
+    } catch (ex) {}
   }
 
   return (
@@ -78,6 +84,15 @@ function Cart() {
         );
       })}
       <h1>Total Price: {Math.abs(TotalPrice.toFixed(2))} $</h1>
+      <div className="videos">
+        <video
+          src="./animation.mp4"
+          autoPlay
+          loop
+          muted
+          type="video/mp4"
+        ></video>
+      </div>
     </div>
   );
 }

@@ -13,7 +13,9 @@ import SelectSmall from "./SelectSmall";
 import CustomizedBadges from "./ShoppingBadge";
 import { styled } from "@mui/system";
 import "./Navbar.css";
-import TemporaryDrawer from "./TemporaryDrawer";
+import { useContext } from "react";
+import Contact from "./Contact";
+import ContextOfPro from "../../contexts/ContextOfPro";
 
 const CustomizedLink = styled(Link)({
   textDecoration: "none",
@@ -37,6 +39,7 @@ const CustomizedButton = styled(Button)({
 });
 
 function Navbar(props) {
+  const { setShowCart } = useContext(ContextOfPro);
   function removeFilter() {
     props.setIsFilter(true);
   }
@@ -55,7 +58,10 @@ function Navbar(props) {
         {props.isFilter == false ? (
           <SelectSmall productsFilter={props.productsFilter}></SelectSmall>
         ) : null}
-        <TemporaryDrawer></TemporaryDrawer>
+        <CustomizedButton onClick={() => setShowCart(true)}>
+          CONTACT US
+        </CustomizedButton>
+        <Contact></Contact>
         <CustomizedLink
           sx={{ marginLeft: "auto" }}
           to="/cart"

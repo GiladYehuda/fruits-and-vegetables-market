@@ -1,10 +1,26 @@
 .footer {
     background-color: #B8F1B0;
-    display: flex;
-    justify-content: center;
+    text-align: center;
+    padding: 3rem 0 2rem;
 }
+
 
 .footer img {
     padding-top: 1rem;
     width: 50rem;
+}
+
+.images-footer {
+    flex-direction: row;
+}
+
+@media screen and (max-width:1600px) {
+    .images-footer {
+        display: block;
+    }
+
+    .footer img {
+        padding-top: 3rem;
+        width: 40rem;
+    }
 }
