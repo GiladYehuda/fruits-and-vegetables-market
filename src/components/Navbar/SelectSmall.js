@@ -3,6 +3,7 @@ import InputLabel from "@mui/material/InputLabel";
 import MenuItem from "@mui/material/MenuItem";
 import FormControl from "@mui/material/FormControl";
 import Select from "@mui/material/Select";
+import { styled } from "@mui/system";
 
 export default function SelectSmall(props) {
   const [age, setAge] = React.useState("");
@@ -14,8 +15,17 @@ export default function SelectSmall(props) {
   };
 
   return (
-    <FormControl sx={{ m: 2, minWidth: 120, ml: 3 }} size="small">
-      <InputLabel id="demo-select-small">Filter</InputLabel>
+    <FormControl sx={{ m: 1, minWidth: 120, ml: 3 }} size="medium">
+      <InputLabel
+        id="demo-select-small"
+        sx={{
+          color: "#E4EFE7",
+          fontFamily: "Roboto Slab, serif",
+          fontSize: "1.2rem",
+        }}
+      >
+        FILTER
+      </InputLabel>
       <Select
         labelId="demo-select-small"
         id="demo-select-small"

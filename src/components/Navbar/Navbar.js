@@ -1,10 +1,40 @@
 import React from "react";
-import { AppBar, Toolbar, Tabs, Typography, Tab, Button } from "@mui/material";
+import {
+  AppBar,
+  Toolbar,
+  Tabs,
+  Typography,
+  Tab,
+  Button,
+  Box,
+} from "@mui/material";
 import { Link } from "react-router-dom";
 import SelectSmall from "./SelectSmall";
-import TemporaryDrawer from "./TemporaryDrawer";
 import CustomizedBadges from "./ShoppingBadge";
+import { styled } from "@mui/system";
 import "./Navbar.css";
+import TemporaryDrawer from "./TemporaryDrawer";
+
+const CustomizedLink = styled(Link)({
+  textDecoration: "none",
+  color: "#fff",
+});
+
+const CustomizedTab = styled(Tab)({
+  color: "#fff",
+  fontWeight: "500",
+  fontSize: "1.2rem",
+  fontFamily: "Roboto Slab, serif",
+  margin: "1rem 0",
+});
+
+const CustomizedButton = styled(Button)({
+  color: "#fff",
+  fontWeight: "500",
+  fontSize: "1.2rem",
+  fontFamily: "Roboto Slab, serif",
+  margin: "1rem 0",
+});
 
 function Navbar(props) {
   function removeFilter() {
@@ -13,21 +43,27 @@ function Navbar(props) {
   return (
     <AppBar sx={{ background: "#346751" }}>
       <Toolbar>
-        <Tabs textColor="inherit">
-          <Link to="/">
-            <Tab label="HOME" onClick={removeFilter}></Tab>
-          </Link>
-          <Link to="/products">
-            <Tab label="PRODUCTS"></Tab>
-          </Link>
-        </Tabs>
-        <TemporaryDrawer></TemporaryDrawer>
-        <Link to="/cart">
-          <CustomizedBadges />
-        </Link>
+        <CustomizedLink to="/">
+          <CustomizedButton label="HOME" onClick={removeFilter}>
+            HOME
+          </CustomizedButton>
+        </CustomizedLink>
+        <CustomizedLink to="/products">
+          <CustomizedButton>PRODUCTS</CustomizedButton>
+        </CustomizedLink>
+
         {props.isFilter == false ? (
           <SelectSmall productsFilter={props.productsFilter}></SelectSmall>
         ) : null}
+        <TemporaryDrawer></TemporaryDrawer>
+        <CustomizedLink
+          sx={{ marginLeft: "auto" }}
+          to="/cart"
+          onClick={removeFilter}
+        >
+          <CustomizedButton>MY CART</CustomizedButton>
+          <CustomizedBadges></CustomizedBadges>
+        </CustomizedLink>
       </Toolbar>
     </AppBar>
   );

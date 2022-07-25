@@ -56,7 +56,7 @@ function Cart() {
       <h1>YOUR CART</h1>
       {productsCart.map((item) => {
         return (
-          <div className="cart-card">
+          <div className="cart-card" key={item.id}>
             <img src={item.image}></img>
             <div>
               <h2 id="title">{item.title}</h2>
@@ -77,7 +77,7 @@ function Cart() {
           </div>
         );
       })}
-      <h1>Total Price: {TotalPrice.toFixed(2)} $</h1>
+      <h1>Total Price: {Math.abs(TotalPrice.toFixed(2))} $</h1>
     </div>
   );
 }

@@ -16,7 +16,7 @@ export default function TemporaryDrawer() {
     right: false,
   });
 
-  const toggleDrawer = (anchor, open) => (event) => {
+  const toggleDrawer = (Anchor, open) => (event) => {
     if (
       event.type === "keydown" &&
       (event.key === "Tab" || event.key === "Shift")
@@ -24,16 +24,19 @@ export default function TemporaryDrawer() {
       return;
     }
 
-    setState({ ...state, [anchor]: open });
+    setState({ ...state, [Anchor]: open });
   };
 
-  const list = (anchor) => (
+  const list = (Anchor) => (
     <Box
-      sx={{ width: anchor === "top" || anchor === "bottom" ? "auto" : 250 }}
+      sx={{ width: Anchor === "top" || Anchor === "bottom" ? "auto" : 270 }}
+      textAlign="center"
+      fontFamily="Libre Baskerville, serif"
       role="presentation"
-      onClick={toggleDrawer(anchor, false)}
-      onKeyDown={toggleDrawer(anchor, false)}
+      onClick={toggleDrawer(Anchor, false)}
+      onKeyDown={toggleDrawer(Anchor, false)}
     >
+      <h1>Contact Us</h1>
       <List>
         {["08-6890-973", "Giladeyuda@gmail.com"].map((text, index) => (
           <ListItem key={text} disablePadding>
@@ -52,15 +55,25 @@ export default function TemporaryDrawer() {
 
   return (
     <div>
-      {["right"].map((anchor) => (
-        <React.Fragment key={anchor}>
-          <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
-          <Drawer
-            anchor={anchor}
-            open={state[anchor]}
-            onClose={toggleDrawer(anchor, false)}
+      {["CONTACT US"].map((Anchor) => (
+        <React.Fragment key={Anchor}>
+          <Button
+            onClick={toggleDrawer(Anchor, true)}
+            sx={{
+              color: "#fff",
+              fontSize: "1.2rem",
+              fontFamily: "Roboto Slab, serif",
+              margin: "1.05rem 0.5rem",
+            }}
           >
-            {list(anchor)}
+            {Anchor}
+          </Button>
+          <Drawer
+            Anchor={Anchor}
+            open={state[Anchor]}
+            onClose={toggleDrawer(Anchor, false)}
+          >
+            {list(Anchor)}
           </Drawer>
         </React.Fragment>
       ))}

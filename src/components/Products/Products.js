@@ -11,6 +11,7 @@ function Products(props) {
         {props.newproducts.map((item) => {
           return (
             <Card
+              key={item.id}
               id={item.id}
               title={item.title}
               image={item.image}

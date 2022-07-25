@@ -16,12 +16,12 @@ const StyledBadge = styled(Badge)(({ theme }) => ({
   },
 }));
 
-export default function CustomizedBadges() {
+export default function CustomizedBadges(props) {
   const { countCart } = useContext(ContextOfPro);
   return (
-    <IconButton aria-label="cart">
+    <IconButton aria-label="cart" sx={{ pr: "2rem" }}>
       <StyledBadge badgeContent={countCart} color="secondary">
-        <ShoppingCartIcon />
+        <ShoppingCartIcon sx={{ pt: "0.2rem", pl: "1rem", fontSize: "2rem" }} />
       </StyledBadge>
     </IconButton>
   );

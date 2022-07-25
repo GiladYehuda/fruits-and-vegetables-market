@@ -25,8 +25,19 @@ function Card(props) {
       leaves: props.leaves,
       amount: props.amount + 1,
     };
-    setProductsCart([...productsCart, product]);
-    setCountCart(countCart + 1);
+    const found = productsCart.find((item) => item.id === props.id);
+    if (!found) {
+      setProductsCart([...productsCart, product]);
+      setCountCart(countCart + 1);
+    } else {
+      setProductsCart(
+        productsCart.map((product) =>
+          product.id === found.id
+            ? { ...product, amount: product.amount + 1 }
+            : product
+        )
+      );
+    }
     setTotalPrice(TotalPrice + props.price);
   }
   return (
